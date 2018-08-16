@@ -33,7 +33,7 @@ public class kehuduan {
 			in.read(bs);
 			String readshebei=new String(bs);
 			int readshebei_i=Integer.parseInt(readshebei);
-			int rs=readshebei_i-1;
+			int rs=readshebei_i+10;
 			
 			    System.out.println(rs);
 			    if(readshebei_i==1) {

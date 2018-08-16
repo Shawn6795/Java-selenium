@@ -56,7 +56,7 @@ public static void main(String[] args)  {
         driver.findElement(By.className("save-button")).click();
         
         //工序
-        driver.get("http://d.mdc.product/Process");//打开指定的网站
+        driver.get("http://"+panel.MDCurl+"/Process");//打开指定的网站
 //      driver.manage().window().maximize();
 //      driver.findElement(By.name("usernameOrEmailAddress")).sendKeys(new  String[] {"admin"});
 //      driver.findElement(By.name("password")).sendKeys(new  String[] {"123qwe"});
