@@ -53,6 +53,7 @@ public class panel {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("\u81EA\u52A8\u5316\u6D4B\u8BD5\u5DE5\u5177");
 		frame.setBounds(100, 100, 520, 435);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
