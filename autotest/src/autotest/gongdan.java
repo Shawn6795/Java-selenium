@@ -1,6 +1,8 @@
 package autotest;
 
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -88,19 +90,46 @@ public static void main(String[] args)  {
       driver.navigate().refresh();
       System.out.println(driver.getCurrentUrl());
       shebei.time2();
-        
+      File fileR = new File("gongdan.txt");
+      if(!fileR.exists()) {
+      try {
+      FileOutputStream out = new FileOutputStream(fileR);
+ 		out.write(2);
+ 		out.close();
+ 		
+      }catch(Exception e) {
+     	 e.printStackTrace();
+      }
         driver.findElement(By.xpath("//*[@id=\"btnCreateProductGroup\"]")).click();
         shebei.time1();
       System.out.println(str);
       List<WebElement> checkboxs3 = driver.findElements(By.className("form-control"));
-      checkboxs3.get(1).sendKeys("123"+str3);
       shebei.time1();
-      checkboxs3.get(2).sendKeys("독야"+str3);
+      
+      checkboxs3.get(0).sendKeys("123"+str3);
       shebei.time1();
-      checkboxs3.get(3).sendKeys(str3);
+      checkboxs3.get(1).sendKeys("독야"+str3);
+      shebei.time1();
+      checkboxs3.get(2).sendKeys(str3);
       shebei.time1();
       driver.findElement(By.className("save-button")).click();
       shebei.time1();
+      }else {
+    	  driver.findElement(By.xpath("//*[@id=\"btnCreateProductGroup\"]")).click();
+          shebei.time1();
+        System.out.println(str);
+        List<WebElement> checkboxs3 = driver.findElements(By.className("form-control"));
+        shebei.time1();
+        
+        checkboxs3.get(1).sendKeys("123"+str3);
+        shebei.time1();
+        checkboxs3.get(2).sendKeys("독야"+str3);
+        shebei.time1();
+        checkboxs3.get(3).sendKeys(str3);
+        shebei.time1();
+        driver.findElement(By.className("save-button")).click();
+        shebei.time1();
+      }
       driver.findElement(By.xpath("//span[contains(text(),'"+str3+"')]")).click();
       shebei.time1();
       driver.findElement(By.xpath("//*[@id=\"btnCreateProduct\"]")).click();
