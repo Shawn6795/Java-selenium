@@ -33,7 +33,8 @@ public class kehuduan {
 			in.read(bs);
 			String readshebei=new String(bs);
 			int readshebei_i=Integer.parseInt(readshebei);
-			int rs=readshebei_i+10;
+			int rs=readshebei_i+5;
+			
 			
 			    System.out.println(rs);
 			    if(readshebei_i==1) {
@@ -41,6 +42,8 @@ public class kehuduan {
 			        shebei.time1();
 			        driver2.findElement(By.xpath("/html/body/div/section/section[2]/header/ul/li[2]/a")).click();
 			        driver2.findElement(By.cssSelector("#driver-name > option:nth-child(2)")).click();
+			        driver2.findElement(By.xpath("//*[@id=\"driver-config-controls\"]/div[4]/div/input")).clear();
+			        driver2.findElement(By.xpath("//*[@id=\"driver-config-controls\"]/div[4]/div/input")).sendKeys("Device"+rs);
 			        driver2.findElement(By.xpath("//*[@id=\"driver-config-panel\"]/div[2]/button[1]")).click();
 			        
 			    }else {
