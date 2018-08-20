@@ -1,10 +1,13 @@
 package selenium;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class settingapi {
 	public static void time1() {
@@ -26,109 +29,224 @@ public class settingapi {
 	}
 	 public static void main(String[] args) throws IOException {
 	    	
-	        System.setProperty("webdriver.chrome.driver","chromedriver.exe");//chromedriver∑˛ŒÒµÿ÷∑
-	        WebDriver driver =new ChromeDriver(); //–¬Ω®“ª∏ˆWebDriver µƒ∂‘œÛ
-	        driver.get("http://LZWL.project/vision/setting/api");//¥Úø™÷∏∂®µƒÕ¯’æ
+	        System.setProperty("webdriver.chrome.driver","chromedriver.exe");//chromedriverÊúçÂä°Âú∞ÂùÄ
+	        WebDriver driver =new ChromeDriver(); //Êñ∞Âª∫‰∏Ä‰∏™WebDriver ÁöÑÂØπË±°
+	        driver.get("http://lzwl.project/vision/setting/api");//ÊâìÂºÄÊåáÂÆöÁöÑÁΩëÁ´ô
 	        driver.manage().window().maximize();
-//	        driver.findElement(By.name("usernameOrEmailAddress")).sendKeys(new  String[] {"admin"});
-//	        driver.findElement(By.name("password")).sendKeys(new  String[] {"123qwe"});
-//	        driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div[2]/button")).click(); //µ„ª˜∞¥≈§
+////	        driver.findElement(By.name("usernameOrEmailAddress")).sendKeys(new  String[] {"admin"});
+////	        driver.findElement(By.name("password")).sendKeys(new  String[] {"123qwe"});
+////	        driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div[2]/button")).click(); //ÁÇπÂáªÊåâÊâ≠
 	        System.out.println(driver.getCurrentUrl());
 	        driver.navigate().refresh();
 	        System.out.println(driver.getCurrentUrl());
 	        selenium.time2();
-	        //
-	      
-//	        driver.findElement(By.xpath("//div[contains(text(),'µ±«∞∞‡¥Œ')]")) .click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®ø®∆¨']")).click();
-//	        driver.findElement(By.xpath("//span[text()='¥π÷±ø®∆¨']")).click();
-//	        driver.findElement(By.xpath("//span[text()='◊Û”“œ‘ æø®∆¨']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'µ±«∞∞‡¥Œ')]")) .click();
-//	        selenium.time1();
-	        //
-	      //  driver.findElement(By.className("ivu-collapse-item")).findElement(By.className("ivu-collapse-header"))
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏√ø–° ±≤˙¡ø')]")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'µ±«∞∞‡¥Œ')]")) .click();
-//	        settingapi.time1();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∫·œÚ÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∑÷“≥÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏√ø–° ±≤˙¡ø')]")).click();
-//	        selenium.time1();
-	        //
-	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏º⁄∂Ø¬ ')]")).click();
-	        driver.findElement(By.xpath("//div[contains(text(),'µ±«∞∞‡¥Œ')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∫·œÚ÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∑÷“≥÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏º⁄∂Ø¬ ')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏◊È√ø–° ±≤˙¡ø')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∫·œÚ÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∑÷“≥÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏◊È√ø–° ±≤˙¡ø')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'µ∂æﬂ‘§æØ')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='±ÌÕ∑–±œﬂ±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//span[text()='Œﬁ±ﬂøÚ±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'µ∂æﬂ‘§æØ')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'π§µ•¥Ô≥…¬ ')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='±ÌÕ∑–±œﬂ±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//span[text()='Œﬁ±ﬂøÚ±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'π§µ•¥Ô≥…¬ ')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏±®æØ–≈œ¢')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='±®æØøÚ']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏±®æØ–≈œ¢')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏◊¥Ã¨∑÷≤º')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∫·œÚ÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∑÷“≥÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®±˝Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()=' ˝æ›‘⁄÷–º‰µƒ±˝Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∑÷“≥±˝Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='±ÌÕ∑–±œﬂ±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//span[text()='Œﬁ±ﬂøÚ±Ì∏Ò']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏◊¥Ã¨∑÷≤º')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏◊¥Ã¨')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='∏ ÃÿÕº']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏◊¥Ã¨')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'√ø–° ±≤˙¡ø(◊‹)')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='∑÷“≥÷˘◊¥Õº']")).click();
-//	        driver.findElement(By.xpath("//span[text()='’€œﬂ÷˘◊¥ªÏ∫œÕº']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'√ø–° ±≤˙¡ø(◊‹)')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏ µ ±◊¥Ã¨')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='…Ë±∏']")).click();
-//	        driver.findElement(By.xpath("//span[text()='…Ë±∏øÚ']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'…Ë±∏ µ ±◊¥Ã¨')]")).click();
-//	        //
-//	        driver.findElement(By.xpath("//div[contains(text(),'µ±«∞∞‡¥Œ≤˙¡ø')]")).click();
-//	        selenium.time1();
-//	        driver.findElement(By.xpath("//span[text()='∆’Õ®ø®∆¨']")).click();
-//	        driver.findElement(By.xpath("//span[text()='¥π÷±ø®∆¨']")).click();
-//	        driver.findElement(By.xpath("//span[text()='◊Û”“œ‘ æø®∆¨']")).click();
-//	        driver.findElement(By.xpath("//div[contains(text(),'µ±«∞∞‡¥Œ≤˙¡ø')]")).click();
 	        
+	        //
+	        List<WebElement> checkboxs = driver.findElements(By.xpath("//div[contains(text(),'ÂΩìÂâçÁè≠Ê¨°')]"));
+	        String ban= checkboxs.get(0).getText();
 	        
+	        if(ban.equals("ÂΩìÂâçÁè≠Ê¨°")) {
+	        	checkboxs.get(0).click();
+	        }
+	        else {
+	        	checkboxs.get(1).click();
+	        }
+	        selenium.time1();
+	        driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(5) > span:nth-child(3) > label > span.mu > span")).click();
+	        selenium.time1();
+	        if(ban.equals("ÂΩìÂâçÁè≠Ê¨°")) {
+	        	checkboxs.get(0).click();
+	        }
+	        else {
+	        	checkboxs.get(1).click();
+	        }
+	        selenium.time1();
+	        
+	        //
+	        driver.findElement(By.xpath("//div[contains(text(),'ËÆæÂ§áÊØèÂ∞èÊó∂‰∫ßÈáè')]")).click();
+	        settingapi.time1();
+            driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(1) > span:nth-child(2) > label > span.mu > span")).click();
+            selenium.time1();
+	        driver.findElement(By.xpath("//div[contains(text(),'ËÆæÂ§áÊØèÂ∞èÊó∂‰∫ßÈáè')]")).click();
+	        selenium.time1();
+	        
+	        //
+            driver.findElement(By.xpath("//div[contains(text(),'ËÆæÂ§áÁ®ºÂä®Áéá')]")).click();
+            selenium.time1();
+	        driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(1) > span:nth-child(4) > label > span.mu > span")).click();
+	        selenium.time1();           
+	        driver.findElement(By.xpath("//div[contains(text(),'ËÆæÂ§áÁ®ºÂä®Áéá')]")).click();
+	        selenium.time1();
+	        
+	        //
+	        driver.findElement(By.xpath("//div[contains(text(),'ËÆæÂ§áÊä•Ë≠¶‰ø°ÊÅØ')]")).click();
+	        selenium.time1();
+	        driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(4) > span:nth-child(2) > label > span.mu > span")).click();
+	        selenium.time1();
+	        driver.findElement(By.xpath("//div[contains(text(),'ËÆæÂ§áÊä•Ë≠¶‰ø°ÊÅØ')]")).click();
+	        selenium.time1();
+	        
+	        //
+	        driver.findElement(By.xpath("//div[contains(text(),'ËÆæÂ§áÁä∂ÊÄÅÂàÜÂ∏É')]")).click();
+	        selenium.time1();
+	        driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(2) > span:nth-child(2) > label > span.mu > span")).click();
+	        selenium.time1();
+	        driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(1) > span:nth-child(7) > label > span.mu > span")).click();
+	        selenium.time1();
+	        driver.findElement(By.xpath("//div[contains(text(),'ËÆæÂ§áÁä∂ÊÄÅÂàÜÂ∏É')]")).click();
+	        selenium.time1();
+	        
+	        //
+	        driver.findElement(By.xpath("//div[contains(text(),'ÂÆûÊó∂Áä∂ÊÄÅ')]")).click();
+	        selenium.time1();
+	        driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(3) > span:nth-child(2) > label > span.mu > span")).click();
+	        selenium.time1();
+	        driver.findElement(By.xpath("//div[contains(text(),'ÂÆûÊó∂Áä∂ÊÄÅ')]")).click();
+	        selenium.time1();
+	        
+	        //
+	        driver.findElement(By.xpath("//div[contains(text(),'Áè≠Ê¨°‰∫ßÈáè')]")).click();
+	        selenium.time1();
+            driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(5) > span:nth-child(4) > label > span.mu > span")).click();
+            selenium.time1();
+	        driver.findElement(By.xpath("//div[contains(text(),'Áè≠Ê¨°‰∫ßÈáè')]")).click();
+	        selenium.time1();
+	        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/button[1]/span")).click();
+	      //CPS MDC      
+	    	//1.vision 
+	    	        //setting api
+	    	        driver.get("http://lzwl.project/vision/build/00000");//ÊâìÂºÄÊåáÂÆöÁöÑÁΩëÁ´ô
+	    	        driver.manage().window().maximize();
+//	    	        driver.findElement(By.name("usernameOrEmailAddress")).sendKeys(new  String[] {"admin"});
+//	    	        driver.findElement(By.name("password")).sendKeys(new  String[] {"123qwe"});
+//	    	        driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div[2]/button")).click(); //ÁÇπÂáªÊåâÊâ≠
+	    	        System.out.println(driver.getCurrentUrl());
+	    	        driver.navigate().refresh();
+	    	        System.out.println(driver.getCurrentUrl());
+	    	        selenium.time2();
+	    	        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/ul/li[1]")).click();
+	    	        WebElement draggable = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[1]"));
+
+	    	        //Âêë‰∏ãÁßªÂä®  ‰∏™ÂÉèÁ¥†
+	    	       
+	    	            //new Actions(driver).dragAndDropBy(draggable, 0, 100).build().perform();
+	    	        
+	    	        //ÂêëÂè≥ÁßªÂä® ‰∏™ÂÉèÁ¥†
+	    	       
+	    	            new Actions(driver).dragAndDropBy(draggable, 50, -100).build().perform();
+	    	         WebElement draggable1 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[2]")); 
+	    	            vision.time1();
+	    	            new Actions(driver).dragAndDropBy(draggable1, -20, 200).build().perform();
+	    	            vision.time1();
+	    	         WebElement draggable2 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[3]")); 
+	    	         new Actions(driver).dragAndDropBy(draggable2, 400, -150).build().perform();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/ul/li[2]")).click();
+	    	         WebElement draggable3 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div")); 
+	    	         new Actions(driver).dragAndDropBy(draggable3, 450, 260).build().perform();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/ul/li[3]")).click();
+	    	         vision.time1();
+	    	         WebElement draggable4 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[4]"));
+	    	         new Actions(driver).dragAndDropBy(draggable4, 960, -100).build().perform();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/ul/li[4]")).click();
+	    	         vision.time1();
+	    	         WebElement draggable5 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div"));
+	    	         new Actions(driver).dragAndDropBy(draggable5, 1070, -70).build().perform();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/ul/li[5]")).click();
+	    	         vision.time1();
+	    	         WebElement draggable6 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[1]"));
+	    	         new Actions(driver).dragAndDropBy(draggable6, 990, 300).build().perform();
+	    	         WebElement draggable7 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[2]"));
+	    	         new Actions(driver).dragAndDropBy(draggable7, 850, 200).build().perform();
+	    	         
+	    	         //Á¨¨‰∏Ä‰∏™ÂõæË°®
+	    	         Actions action = new Actions(driver) ;
+	    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id, 'inner_chartBar')]"))).perform();//Âè≥ÈîÆ
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time2();
+	    	         //Á¨¨‰∫å‰∏™ÂõæË°®
+	    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id,'inner_chartBarLoop')]"))).perform();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[1]/div/div[2]/ul[2]/li")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time2();
+	    	         //Á¨¨‰∏â‰∏™ÂõæË°®
+	    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id,'inner_chartPieVs')]"))).perform();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/div/div[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/div/div[2]/ul[2]/li[1]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time2();
+	    	         //Á¨¨Âõõ‰∏™ÂõæË°®
+	    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id,'inner_tableViewPro')]"))).perform();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time2();
+	    	         //Á¨¨‰∫î‰∏™ÂõæË°®
+	    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id,'device')]"))).perform();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/div/div[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/div/div[2]/ul[2]/li[1]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time2();
+	    	         
+	    	         //Á¨¨ÂÖ≠‰∏™ÂõæË°®
+	    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id,'warningBar')]"))).perform();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/div/div[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/div/div[2]/ul[2]/li[1]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time2();
+	    	         //Á¨¨‰∏É‰∏™ÂõæË°®
+	    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id, 'cardVTop')]"))).perform();//Âè≥ÈîÆ
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time2();
+	    	         //Á¨¨ÂÖ´‰∏™ÂõæË°®
+	    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id, 'cardMix')]"))).perform();//Âè≥ÈîÆ
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+	    	         vision.time1();
+	    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/header/div[4]/div[5]")).click();
+	    	         vision.time1();
+	    	         driver.get("http://lzwl.project/vision/00000");      
+	    	         
+	    	 }       
 }
-}
+

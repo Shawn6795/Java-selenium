@@ -32,30 +32,17 @@ public class xiaolv_day {
 	public static String database;
     
     public static void main(String args[]) {    
-        // Create a variable for the connection string.  
-//    	SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-//    	String str1=df1.format(new Date());;
-//    	//String str2="2018-07-31 16:00:00";
-//    	String pattern="yyyy-MM-dd HH:mm:ss";
-//    	System.out.println(time.getDistanceTime(str1, str2, pattern));
+ 
         String url = "jdbc:sqlserver://PRODUCTTEAM;databaseName="+panel.Databasename+";user=sa;password=P@ssw0rd";//sa身份连接    
     
-        //String url2 = "jdbc:sqlserver://127.0.0.1:1368;databaseName=mydb;integratedSecurity=true;";//windows集成模式连接    
-    
-        // Declare the JDBC objects.    
+          
         Connection con = null;    
         Statement stmt = null;    
         ResultSet rs = null;    
     
         try { 
         	
-        	Scanner scanner = new Scanner(System.in); //声明Scanner对象
-//        	System.out.println("请输设备编号"); //提示用户输入字符串
-//        	 result = scanner.next(); //定义一个result接受输入的语句
-//        	System.out.println("请输入日期");
-//        	 resulttime=scanner.next();
-            // Establish the connection.    
-            //System.out.println("begin.");    
+        	 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");    
             con = DriverManager.getConnection(url);    
             //System.out.println("end.");  
@@ -119,8 +106,7 @@ public class xiaolv_day {
                        b++;
                        }
                    
-//                   double Runrate = new BigDecimal((float)Runtime/Totaltime).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();
-//           		System.out.println(Runrate*100); 
+
                        
                        String SQL4="SELECT Top 1 EndTime,StartTime FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"' and IsPlaned='1'and ShiftDetail_ShiftDay='"+date+"' order by EndTime";
                         stmt = con.createStatement();
@@ -160,11 +146,10 @@ public class xiaolv_day {
      		
      		System.out.println(strS2);
      		if(strS2==null&&strS3!=null&&strS4!=null) {
-     			//System.out.println("稼动率："+df.format((float)(JRun+nowtime)/(JTotal+nowtime)*100));
-     			
+
      			activation=df.format((float)(JNei+nowtime)/(JWai+JNei+nowtime)*100);
      		}else if(strS2!=null&&strS3==null&&strS4!=null) {
-     			//System.out.println("稼动率："+df.format((float)JRun/JTotal*100));
+     	
      			activation=df.format((float)JNei/(JWai+nowtime+JNei)*100);
      			
      		}else  {
