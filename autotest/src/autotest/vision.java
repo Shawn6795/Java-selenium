@@ -18,7 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 
 
 public class vision {
-	public static void main(String[] args) throws IOException  {
+	public static void main(String[] args) {
     	
 	    System.setProperty("webdriver.chrome.driver","chromedriver.exe");//chromedriver服务地址
         WebDriver driver =new ChromeDriver(); //新建一个WebDriver 的对象
@@ -29,19 +29,7 @@ public class vision {
         driver.navigate().refresh();
         System.out.println(driver.getCurrentUrl());
         shebei.time2();
-        
-//        File fileM = new File("shebei.txt");
-//    			FileInputStream in = new FileInputStream(fileM); // 读取文件路径
-//    			byte bs[] = new byte[in.available()];
-//    			in.read(bs);
-//    			String readshebei=new String(bs);
-//    			    System.out.println(readshebei);
-    			      
-    			      
-    				//System.out.println(q.read());
-    				//System.out.println("bu");
-    				
-    		
+   	
         //
         List<WebElement> checkboxs = driver.findElements(By.xpath("//div[contains(text(),'当前班次')]"));
         String ban= checkboxs.get(0).getText();

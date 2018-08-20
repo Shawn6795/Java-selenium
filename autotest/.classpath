@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/jar/sqljdbc42.jar"/>
-	<classpathentry kind="lib" path="D:/jar/client-combined-3.5.2-nodeps.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lib"/>
+	<classpathentry kind="lib" path="E:/软件工具/client-combined-3.5.2-nodeps.jar"/>
+	<classpathentry kind="lib" path="E:/软件工具/sqljdbc42.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
