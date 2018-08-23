@@ -153,7 +153,7 @@ public class vision_data {
            double runsum=0;
            double stopsum=0;
            
-           String S2="SELECT TOP 2 * FROM dbo.DailyStatesSummaries where MachineId='"+MachinesId+"' order by MachinesShiftDetailId desc";
+           String S2="SELECT * FROM dbo.DailyStatesSummaries where MachineId='"+MachinesId+"' order by MachinesShiftDetailId desc";
            stmt = con.createStatement();    
            rs = stmt.executeQuery(S2); 
            int a=0;
@@ -200,7 +200,7 @@ public class vision_data {
      String Mchanliang = driver.findElement(By.className("cardMixTop")).getText();
      System.out.println(Mchanliang);
 
-         String SQL="SELECT TOP 1 MachinesShiftDetailId FROM dbo.Capacities order by MachinesShiftDetailId desc";
+         String SQL="SELECT TOP 1 MachinesShiftDetailId FROM dbo.DailyStatesSummaries order by MachinesShiftDetailId desc";
          stmt = con.createStatement();    
          rs = stmt.executeQuery(SQL); 
          

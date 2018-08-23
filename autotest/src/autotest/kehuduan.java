@@ -149,33 +149,47 @@ public class kehuduan {
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[1]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[1]/td[5]/input")).sendKeys("2");
+    
+    driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[5]/td[5]")).click();
+    shebei.time1();
+    driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[5]/td[5]/input")).sendKeys("error");
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[2]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[2]/td[5]/input")).sendKeys("1");
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[3]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[3]/td[5]/input")).sendKeys(""+shebei.R_random);
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[2]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[2]/td[5]/input")).sendKeys("2");
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[4]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[4]/td[5]/input")).sendKeys("404");
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[2]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[2]/td[5]/input")).sendKeys("3");
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[6]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[6]/td[5]/input")).sendKeys(I2_random);
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[11]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[11]/td[5]/input")).sendKeys(I3_random);
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[12]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[12]/td[5]/input")).sendKeys("Ture");
+    
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[13]/td[5]")).click();
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[13]/td[5]/input")).sendKeys("Ture");
+    
     shebei.time1();
     driver2.findElement(By.xpath("//*[@id=\"var-table-body\"]/tr[15]/td[5]")).click();
     shebei.time1();
