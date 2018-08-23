@@ -1,6 +1,9 @@
 package selenium;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -45,7 +48,7 @@ public class vision_data {
 
 //CPS MDC      
 //1.设备实时状态对比 
-    
+	   System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("vision.txt")),true));
     	   System.setProperty("webdriver.chrome.driver","chromedriver.exe");//chromedriver服务地址
            WebDriver driver =new ChromeDriver(); //新建一个WebDriver 的对象
        driver.get("http://lzwl.project/vision/00000");//打开指定的网站
@@ -265,7 +268,12 @@ public class vision_data {
        }else {
     	   System.out.println("当前班次不同");
        }
-       
+       try {
+   		Process process = Runtime.getRuntime().exec(
+   		"cmd.exe /c notepad vision.txt");
+   		} catch (Exception e) {
+   		e.printStackTrace();
+   		}  
      
    }
 }
