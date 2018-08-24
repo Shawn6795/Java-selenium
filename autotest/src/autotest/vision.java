@@ -78,7 +78,9 @@ public class vision {
         driver.findElement(By.xpath("//div[contains(text(),'设备稼动率')]")).click();
         shebei.time1();
         driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(1) > span:nth-child(4) > label > span.mu > span")).click();
-        shebei.time1();           
+        shebei.time1();   
+        driver.findElement(By.cssSelector("#app > div > div.relationshipBox > div > div.ivu-collapse-item.ivu-collapse-item-active > div.ivu-collapse-content > div > p > div > span:nth-child(5) > span:nth-child(2) > label > span.mu > span")).click();
+        shebei.time1();
         driver.findElement(By.xpath("//div[contains(text(),'设备稼动率')]")).click();
         shebei.time1();
         
@@ -151,8 +153,11 @@ public class vision {
     	         shebei.time1();
     	         WebElement draggable6 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[1]"));
     	         new Actions(driver).dragAndDropBy(draggable6, 990, 300).build().perform();
-    	         WebElement draggable7 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[2]"));
+    	         WebElement draggable7 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[3]"));
     	         new Actions(driver).dragAndDropBy(draggable7, 850, 200).build().perform();
+    	         WebElement draggable8 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div[2]"));
+    	         new Actions(driver).dragAndDropBy(draggable8, 690, 200).build().perform();
+    	         
     	         
     	         //第一个图表
     	         Actions action = new Actions(driver) ;
@@ -235,6 +240,20 @@ public class vision {
     	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
     	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
     	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+    	         shebei.time1();
+    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
+    	         shebei.time1();
+    	       
+    	         //第九个表
+    	         action.contextClick(driver.findElement(By.xpath("//div[contains(@id, 'cardView')]"))).perform();//右键
+    	         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/ul/li[1]")).click();
+    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div")).click();
+    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li/div/div[2]/ul[2]/li")).click();
+    	         shebei.time1();
+    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/div/div[1]/div/span")).click();
+    	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/div/div[2]/ul[2]/li")).click();
+    	         shebei.time1();
     	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
     	         shebei.time1();
     	         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[3]/button[2]")).click();
@@ -466,6 +485,9 @@ public class vision {
     	            }else {
     	         	   System.out.println("当前班次不同");
     	            }
+    	            String jiadonglv =driver.findElement(By.className("item")).getText();
+    	            System.out.println();
+    	            System.out.println(jiadonglv);
     	            try {
     		    		Process process = Runtime.getRuntime().exec(
     		    		"cmd.exe /c notepad vision.txt");
