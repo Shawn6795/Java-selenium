@@ -490,26 +490,10 @@ public class vision {
     	            }
     	            
     	            //稼动率
-    	            String Vjiadonglv =driver.findElement(By.className("item")).getText()+".00";
-    	            driver.get("http://lzwl.project/EfficiencyTrends");
-    	            driver.manage().window().maximize();
-    	          driver.findElement(By.name("usernameOrEmailAddress")).sendKeys(new  String[] {"admin"});
-    	          driver.findElement(By.name("password")).sendKeys(new  String[] {"123qwe"});
-    	          driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div[2]/button")).click(); //点击按扭
-    	          driver.navigate().refresh();
-    	          shebei.time2();
-    	          driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div[2]/div/ul/li[2]/a")).click();
-    	          shebei.time1();
-    	            String Mjiadonglv="稼动率:"+driver.findElement(By.cssSelector("#EfficiencyTrendsTable > tbody > tr.even > td:nth-child(2)")).getText();
+    	            String Vjiadonglv =driver.findElement(By.className("item")).getText();
     	            System.out.println();
     	            System.out.println(Vjiadonglv);
-    	            System.out.println(Mjiadonglv);
-    	            if(Vjiadonglv.equals(Mjiadonglv)) {
-    	         	   System.out.println("相同");
-    	            }else {
-    	         	   System.out.println("不相同");
-    	            }
-    	            
+    	           
     	            //输出
     	            try {
     		    		Process process = Runtime.getRuntime().exec(
