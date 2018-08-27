@@ -272,5 +272,25 @@ public class panel {
 		lblDesignByShawn.setForeground(Color.LIGHT_GRAY);
 		lblDesignByShawn.setBounds(335, 371, 159, 15);
 		frame.getContentPane().add(lblDesignByShawn);
+		
+		JButton Baobiaobutton = new JButton("\u62A5\u8868");
+		Baobiaobutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				MDCurl=MDCtextField.getText();
+				DMPurl=DMPtextField.getText();
+				Databasename=DatabasetextField.getText();
+				
+				try {
+					baobiao.main(null);
+					Baobiaobutton.setBackground(Color.GREEN);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+                 	e.printStackTrace();
+                 	Baobiaobutton.setBackground(Color.RED);
+				}
+			}
+		});
+		Baobiaobutton.setBounds(368, 47, 114, 38);
+		frame.getContentPane().add(Baobiaobutton);
 	}
 }
