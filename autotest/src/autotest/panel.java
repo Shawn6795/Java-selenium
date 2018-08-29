@@ -54,7 +54,7 @@ public class panel {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle("\u81EA\u52A8\u5316\u6D4B\u8BD5\u5DE5\u5177");
-		frame.setBounds(100, 100, 520, 435);
+		frame.setBounds(100, 100, 520, 505);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -165,7 +165,7 @@ public class panel {
 				}
 			}
 		});
-		Zhibiaobutton.setBounds(26, 210, 114, 38);
+		Zhibiaobutton.setBounds(197, 383, 114, 38);
 		frame.getContentPane().add(Zhibiaobutton);
 		
 		JButton Xiaolvbutton = new JButton("\u6548\u7387\u8D8B\u52BF");
@@ -176,7 +176,7 @@ public class panel {
 				Databasename=DatabasetextField.getText();
 				
 				try {
-					xiaolv.main(null);
+					xiaolv_p.main(null);
 					Xiaolvbutton.setBackground(Color.GREEN);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -185,7 +185,7 @@ public class panel {
 				}
 			}
 		});
-		Xiaolvbutton.setBounds(198, 209, 114, 38);
+		Xiaolvbutton.setBounds(26, 210, 114, 38);
 		frame.getContentPane().add(Xiaolvbutton);
 		
 		JButton Chanliangbutton = new JButton("\u4EA7\u91CF\u7EDF\u8BA1");
@@ -196,7 +196,7 @@ public class panel {
 				Databasename=DatabasetextField.getText();
 				
 				try {
-					chanliang.main(null);
+					chanliang_p.main(null);
 					Chanliangbutton.setBackground(Color.GREEN);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -290,7 +290,15 @@ public class panel {
 				}
 			}
 		});
-		Baobiaobutton.setBounds(368, 47, 114, 38);
+		Baobiaobutton.setBounds(26, 383, 114, 38);
 		frame.getContentPane().add(Baobiaobutton);
+		
+		JButton Yongshibutton = new JButton("\u7528\u65F6\u7EDF\u8BA1");
+		Yongshibutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		Yongshibutton.setBounds(197, 210, 114, 38);
+		frame.getContentPane().add(Yongshibutton);
 	}
 }
