@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 
 public class chanliang_p {
@@ -226,6 +228,57 @@ public class chanliang_p {
 				    chanliang_algorithm.Ysum=0;
 				    chanliang_algorithm.BYsum=0;
 					
+				}
+				else if(Rzhou.isSelected()) {
+					try {
+						chanliang_zyn.main(null);
+					} catch (ClassNotFoundException | SQLException | ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					 Tchanliang.setText(" "+chanliang_zyn.Ysumweek);
+					 for(int j=0;j<100;j++) {
+					    	chanliang_zyn.Yarrweek[j]=0;
+					    	chanliang_zyn.Yarrmonth[j]=0;
+					    	chanliang_zyn.Yarryear[j]=0;
+					    }
+					    chanliang_zyn.Ysumweek=0;		
+					    chanliang_zyn.Ysummonth=0;
+					    chanliang_zyn.Ysumyear=0;
+				}
+				else if(Ryue.isSelected()) {
+					try {
+						chanliang_zyn.main(null);
+					} catch (ClassNotFoundException | SQLException | ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					 Tchanliang.setText(" "+chanliang_zyn.Ysummonth);
+					 for(int j=0;j<100;j++) {
+					    	chanliang_zyn.Yarrweek[j]=0;
+					    	chanliang_zyn.Yarrmonth[j]=0;
+					    	chanliang_zyn.Yarryear[j]=0;
+					    }
+					    chanliang_zyn.Ysumweek=0;		
+					    chanliang_zyn.Ysummonth=0;
+					    chanliang_zyn.Ysumyear=0;
+				}
+				else if(Rnian.isSelected()) {
+					try {
+						chanliang_zyn.main(null);
+					} catch (ClassNotFoundException | SQLException | ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					Tchanliang.setText(" "+chanliang_zyn.Ysumyear);
+					for(int j=0;j<100;j++) {
+				    	chanliang_zyn.Yarrweek[j]=0;
+				    	chanliang_zyn.Yarrmonth[j]=0;
+				    	chanliang_zyn.Yarryear[j]=0;
+				    }
+				    chanliang_zyn.Ysumweek=0;		
+				    chanliang_zyn.Ysummonth=0;
+				    chanliang_zyn.Ysumyear=0;
 				}
 			
 			}

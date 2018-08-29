@@ -83,6 +83,7 @@ public class yunxinglv_zyn {
 	           // String date=resulttime+" "+"00:00:00.000";
 	            // Create and execute an SQL statement that returns some data.  
 	            
+	            
 	            String SQL = "SELECT Id FROM dbo.Machines where Code='"+result+"'";    
 	            stmt = con.createStatement();    
 	            rs = stmt.executeQuery(SQL);   
