@@ -44,26 +44,17 @@ public class jiadonglv_zyn {
 	public static String MachineID;
 
 	
-	
-    
     public static void main(String args[]) throws ClassNotFoundException, SQLException, ParseException {    
  
         String url = "jdbc:sqlserver://PRODUCTTEAM;databaseName="+panel.Databasename+";user=sa;password=P@ssw0rd";//sa身份连接    
-    
-          
+
         Connection con = null;    
         Statement stmt = null;    
         ResultSet rs = null;    
-    
-       
-        	 
+
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");    
             con = DriverManager.getConnection(url);    
-            //System.out.println("end.");  
-            
-            
-           
-            // Create and execute an SQL statement that returns some data.  
+
             SimpleDateFormat simdf = new SimpleDateFormat("yyyy-MM-dd");
    		 SimpleDateFormat day = new SimpleDateFormat("dd");
    		 SimpleDateFormat Year = new SimpleDateFormat("yyyy");
@@ -72,7 +63,7 @@ public class jiadonglv_zyn {
    		 Calendar cal = Calendar.getInstance();
    		 Date date=simdf.parse(yunxinglv_zyn.resulttime);
    		 cal.setTime(date);
-   		 String nowdate=simdf.format(cal.getTime()).toString();
+   		 String nowdate=simdf.format(cal.getTime());
  
    		 String[] week=new String [7];
    		 cal.set(cal.DAY_OF_WEEK, cal.MONDAY);
@@ -103,7 +94,6 @@ public class jiadonglv_zyn {
                 while (rs.next()) { 
                 	String str=rs.getString(1);
                 	strS=str;
-                	
                 }
                 System.out.println(strS);
                 //System.out.println(strS2);
@@ -159,33 +149,12 @@ public class jiadonglv_zyn {
             }   
             
             for(int j=0;j<100;j++) {
-            	
-            	 
             	 JNei+=JNarr[j];
             	 JWai+=JWarr[j];
-            	
-            	 //sum=sum+sum;
             }
            
             DecimalFormat df=new DecimalFormat("0.00");
-          
-            System.out.println(JNei);
-            System.out.println(JWai);
-     		
-     		
-     		System.out.println(strS2);
-     		if(strS2==null&&strS3!=null&&strS4!=null) {
-
-     			activation=df.format((float)(JNei+nowtime)/(JWai+JNei+nowtime)*100);
-     		}else if(strS2!=null&&strS3==null&&strS4!=null) {
-     	
-     			activation=df.format((float)JNei/(JWai+nowtime+JNei)*100);
-     			
-     		}else  {
-     			activation=df.format((float)JNei/(JWai+JNei)*100);
-     		}
-     		System.out.println(activation);
-            
+         
     //按月
      		 Calendar calM = Calendar.getInstance();
        		 
@@ -210,17 +179,7 @@ public class jiadonglv_zyn {
        		 for(int i=0;i<lastday;i++) {
        		System.out.println(month[i]);
        		 }
-               
-                   
-                    System.out.println(strS);
-                    //System.out.println(strS2);
-                  
-                	//String str2="2018-07-31 16:00:00";
-                	
-                	
-                	 
-                	
-                	
+
                    //System.out.println(MachineID);  
                 	int y1=0;
                   for(int i=0;i<lastday;i++) {
@@ -245,38 +204,11 @@ public class jiadonglv_zyn {
                            }
                   }
 
-                         
-                       
-                   
-                
                 for(int j=0;j<100;j++) {
-                	
-                	 
-                	 JNeimonth+=JNarrmonth[j];
+                     JNeimonth+=JNarrmonth[j];
                 	 JWaimonth+=JWarrmonth[j];
-                	
-                	 //sum=sum+sum;
-                }
-               
-               
-              
-                System.out.println(JNeimonth);
-                System.out.println(JWaimonth);
-         		
-         		
-         		System.out.println(strS2);
-         		if(strS2==null&&strS3!=null&&strS4!=null) {
 
-         			activationmonth=df.format((float)(JNeimonth+nowtime)/(JWaimonth+JNeimonth+nowtime)*100);
-         		}else if(strS2!=null&&strS3==null&&strS4!=null) {
-         	
-         			activationmonth=df.format((float)JNeimonth/(JWaimonth+nowtime+JNeimonth)*100);
-         			
-         		}else  {
-         			activationmonth=df.format((float)JNeimonth/(JWaimonth+JNeimonth)*100);
-         		}
-         		System.out.println(activationmonth);
-           
+                }
        //按年
          		 Calendar calY = Calendar.getInstance();
                  calY.setTime(date);
@@ -324,11 +256,6 @@ public class jiadonglv_zyn {
      	                           }
      	                  }
 
-     	                           
-     	                           
-     	                       
-     	                 
-     	                
      	                for(int j=0;j<100;j++) {
      	                	
      	                	 
@@ -337,24 +264,23 @@ public class jiadonglv_zyn {
      	                	
      	                	 //sum=sum+sum;
      	                }
-     	               
-     	               
-     	              
-     	                System.out.println(JNeiyear);
-     	                System.out.println(JWaiyear);
-     	         		
-     	         		
-     	         		System.out.println(strS2);
-     	         		if(strS2==null&&strS3!=null&&strS4!=null) {
 
+     	         		if(strS2==null&&strS3!=null&&strS4!=null) {
+     	         			activation=df.format((float)(JNei+nowtime)/(JWai+JNei+nowtime)*100);
+     	         			activationmonth=df.format((float)(JNeimonth+nowtime)/(JWaimonth+JNeimonth+nowtime)*100);
      	         			activationyear=df.format((float)(JNeiyear+nowtime)/(JWaiyear+JNeiyear+nowtime)*100);
      	         		}else if(strS2!=null&&strS3==null&&strS4!=null) {
-     	         	
+     	         			activation=df.format((float)JNei/(JWai+nowtime+JNei)*100);
+     	         			activationmonth=df.format((float)JNeimonth/(JWaimonth+nowtime+JNeimonth)*100);
      	         			activationyear=df.format((float)JNeiyear/(JWaiyear+nowtime+JNeiyear)*100);
      	         			
      	         		}else  {
+     	         			activation=df.format((float)JNei/(JWai+JNei)*100);
      	         			activationyear=df.format((float)JNeiyear/(JWaiyear+JNeiyear)*100);
+     	         			activationmonth=df.format((float)JNeimonth/(JWaimonth+JNeimonth)*100);
      	         		}
      	         		System.out.println(activationyear);
+     	         		System.out.println(activationmonth);
+     	         		System.out.println(activation);
     }    
 }    

@@ -295,7 +295,18 @@ public class panel {
 		
 		JButton Yongshibutton = new JButton("\u7528\u65F6\u7EDF\u8BA1");
 		Yongshibutton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
+				MDCurl=MDCtextField.getText();
+				DMPurl=DMPtextField.getText();
+				Databasename=DatabasetextField.getText();
+				try {
+					yongshi_p.main(null);
+					Yongshibutton.setBackground(Color.GREEN);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+                 	e.printStackTrace();
+                 	Yongshibutton.setBackground(Color.RED);
+				}
 			}
 		});
 		Yongshibutton.setBounds(197, 210, 114, 38);

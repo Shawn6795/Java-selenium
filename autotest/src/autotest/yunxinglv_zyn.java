@@ -16,23 +16,23 @@ import java.util.List;
 public class yunxinglv_zyn {
 	public static String MachineID;
 	
-	public static String result=null;
-	public static String resulttime=null;
+	public static String result;
+	public static String resulttime;
 	
-	public static int[] Tarrweek=new int[100];
-	public static int[] Rarrweek=new int[100];
+	public static int[] Tarrweek=new int[8];
+	public static int[] Rarrweek=new int[8];
 	public static int Totalweek=0;
 	public static int Runweek=0;
 	public static String runrateweek=null;
 	
-	public static int[] Tarrmonth=new int[100];
-	public static int[] Rarrmonth=new int[100];
+	public static int[] Tarrmonth=new int[32];
+	public static int[] Rarrmonth=new int[32];
 	public static int Totalmonth=0;
 	public static int Runmonth=0;
 	public static String runratemonth=null;
 	
-	public static int[] Tarryear=new int[100];
-	public static int[] Rarryear=new int[100];
+	public static int[] Tarryear=new int[367];
+	public static int[] Rarryear=new int[367];
 	public static int Totalyear=0;
 	public static int Runyear=0;
 	public static String runrateyear=null;
@@ -104,7 +104,7 @@ public class yunxinglv_zyn {
 	                }
 	                }
 	                }
-	            for(int j=0;j<100;j++) {
+	            for(int j=0;j<8;j++) {
 	            	
 	            	 Totalweek+=Tarrweek[j];
 	            	 Runweek+=Rarrweek[j];
@@ -140,10 +140,10 @@ public class yunxinglv_zyn {
 			 }
 			 int m=0;
 			 for(int i=0;i<lastday;i++) {
-			  System.out.println(month[i]);
-			  String SQLt="SELECT TotalDuration,RunDuration  FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay='"+month[i]+"'";
+			  //System.out.println(month[i]);
+			  String SQLt2="SELECT TotalDuration,RunDuration  FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay='"+month[i]+"'";
               stmt = con.createStatement();    
-              rs = stmt.executeQuery(SQLt); 
+              rs = stmt.executeQuery(SQLt2); 
               
               while (rs.next()) {    
                   Tarrmonth[m]=rs.getInt(1);
@@ -151,7 +151,7 @@ public class yunxinglv_zyn {
                   m++;
               }
 			 }
-			 for(int j=0;j<100;j++) {
+			 for(int j=0;j<lastday;j++) {
 	            	
             	 Totalmonth+=Tarrmonth[j];
             	 Runmonth+=Rarrmonth[j];
@@ -188,7 +188,7 @@ public class yunxinglv_zyn {
 			 }
 			 int y=0;
 			 for(int i=0;i<year;i++) {
-			  System.out.println(YEAR[i]);
+			 // System.out.println(YEAR[i]);
 			  String SQLt="SELECT TotalDuration,RunDuration  FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay='"+YEAR[i]+"'";
               stmt = con.createStatement();    
               rs = stmt.executeQuery(SQLt); 
@@ -199,7 +199,7 @@ public class yunxinglv_zyn {
                   y++;
               }
 			 }
-			 for(int j=0;j<100;j++) {
+			 for(int j=0;j<year;j++) {
 	            	
             	 Totalyear+=Tarryear[j];
             	 Runyear+=Rarryear[j];
