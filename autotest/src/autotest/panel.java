@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class panel {
 
@@ -53,6 +54,7 @@ public class panel {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setFont(new Font("ËÎÌו", Font.PLAIN, 12));
 		frame.setTitle("\u81EA\u52A8\u5316\u6D4B\u8BD5\u5DE5\u5177");
 		frame.setBounds(100, 100, 520, 505);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -269,8 +271,9 @@ public class panel {
 		frame.getContentPane().add(Visionbutton);
 		
 		JLabel lblDesignByShawn = new JLabel("Developed by Shawn\u00B7Shao");
+		lblDesignByShawn.setFont(new Font("ËÎÌו", Font.PLAIN, 12));
 		lblDesignByShawn.setForeground(Color.LIGHT_GRAY);
-		lblDesignByShawn.setBounds(335, 371, 159, 15);
+		lblDesignByShawn.setBounds(350, 441, 154, 15);
 		frame.getContentPane().add(lblDesignByShawn);
 		
 		JButton Baobiaobutton = new JButton("\u62A5\u8868");

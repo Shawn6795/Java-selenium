@@ -20,87 +20,85 @@ public class yongshi_tzny {
 	public static int[] RunTime=new int[5];
 	public static int[] Stop=new int[5];
 	
-	public static int[] Offlinezhou=new int[8];
-	public static int[] Freezhou=new int[8];
-	public static int[] Debugzhou=new int[8];
-	public static int[] RunTimezhou=new int[8];
-	public static int[] Stopzhou=new int[8];
-	public static int[] Totaltimezhou=new int[8];
+	public static int[] Offlinezhou=new int[100];
+	public static int[] Freezhou=new int[100];
+	public static int[] Debugzhou=new int[100];
+	public static int[] RunTimezhou=new int[100];
+	public static int[] Stopzhou=new int[100];
+	public static int[] Totaltimezhou=new int[100];
 	
-	public static int[] Offlineyue=new int[32];
-	public static int[] Freeyue=new int[32];
-	public static int[] Debugyue=new int[32];
-	public static int[] RunTimeyue=new int[32];
-	public static int[] Stopyue=new int[32];
-	public static int[] Totaltimeyue=new int[32];
+	public static int[] Offlineyue=new int[100];
+	public static int[] Freeyue=new int[100];
+	public static int[] Debugyue=new int[100];
+	public static int[] RunTimeyue=new int[100];
+	public static int[] Stopyue=new int[100];
+	public static int[] Totaltimeyue=new int[100];
 	
-	public static int[] Offlinenian=new int[367];
-	public static int[] Freenian=new int[367];
-	public static int[] Debugnian=new int[367];
-	public static int[] RunTimenian=new int[367];
-	public static int[] Stopnian=new int[367];
-	public static int[] Totaltimenian=new int[367];
+	public static int[] Offlinenian=new int[1100];
+	public static int[] Freenian=new int[1100];
+	public static int[] Debugnian=new int[1100];
+	public static int[] RunTimenian=new int[1100];
+	public static int[] Stopnian=new int[1100];
+	public static int[] Totaltimenian=new int[1100];
 	
-	public static int Offlinesum;
-	public static int Freesum;
-	public static int Debugsum;
-	public static int RunTimesum;
-	public static int Stopsum;
-	public static int Totaltimesum;
+	public static int Offlinesum=0;
+	public static int Freesum=0;
+	public static int Debugsum=0;
+	public static int RunTimesum=0;
+	public static int Stopsum=0;
+	public static int Totaltimesum=0;
 	
-	public static int Offlinezhousum;
-	public static int Freezhousum;
-	public static int Debugzhousum;
-	public static int RunTimezhousum;
-	public static int Stopzhousum;
-	public static int Totaltimezhousum;
+	public static int Offlinezhousum=0;
+	public static int Freezhousum=0;
+	public static int Debugzhousum=0;
+	public static int RunTimezhousum=0;
+	public static int Stopzhousum=0;
+	public static int Totaltimezhousum=0;
 	
-	public static int Offlineyuesum;
-	public static int Freeyuesum;
-	public static int Debugyuesum;
-	public static int RunTimeyuesum;
-	public static int Stopyuesum;
-	public static int Totaltimeyuesum;
+	public static int Offlineyuesum=0;
+	public static int Freeyuesum=0;
+	public static int Debugyuesum=0;
+	public static int RunTimeyuesum=0;
+	public static int Stopyuesum=0;
+	public static int Totaltimeyuesum=0;
 	
-	public static int Offlineniansum;
-	public static int Freeniansum;
-	public static int Debugniansum;
-	public static int RunTimeniansum;
-	public static int Stopniansum;
-	public static int Totaltimeniansum;
+	public static int Offlineniansum=0;
+	public static int Freeniansum=0;
+	public static int Debugniansum=0;
+	public static int RunTimeniansum=0;
+	public static int Stopniansum=0;
+	public static int Totaltimeniansum=0;
 	
 	
 	
-	public static String Offlineday;
-	public static String Freeday;
-	public static String Debugday;
-	public static String RunTimeday;
-	public static String Stopday;
+	public static String Offlineday=null;
+	public static String Freeday=null;
+	public static String Debugday=null;
+	public static String RunTimeday=null;
+	public static String Stopday=null;
 	
-	public static String Offlineweek;
-	public static String Freeweek;
-	public static String Debugweek;
-	public static String RunTimeweek;
-	public static String Stopweek;
+	public static String Offlineweek=null;
+	public static String Freeweek=null;
+	public static String Debugweek=null;
+	public static String RunTimeweek=null;
+	public static String Stopweek=null;
 	
-	public static String Offlinemonth;
-	public static String Freemonth;
-	public static String Debugmonth;
-	public static String RunTimemonth;
-	public static String Stopmonth;
+	public static String Offlinemonth=null;
+	public static String Freemonth=null;
+	public static String Debugmonth=null;
+	public static String RunTimemonth=null;
+	public static String Stopmonth=null;
 	
-	public static String Offlineyear;
-	public static String Freeyear;
-	public static String Debugyear;
-	public static String RunTimeyear;
-	public static String Stopyear;
-	
+	public static String Offlineyear=null;
+	public static String Freeyear=null;
+	public static String Debugyear=null;
+	public static String RunTimeyear=null;
+	public static String Stopyear=null;
 
-	
 	
 	public static String shebeihao=null;
 	public static String riqi=null;
-	public static String MachineID;
+	public static String MachineID=null;
 	
 	
 	 public static void main(String args[]) throws ClassNotFoundException, SQLException, ParseException  {    
@@ -114,23 +112,17 @@ public class yongshi_tzny {
 	        
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");    
             con = DriverManager.getConnection(url);    
-            //System.out.println("end.");  
-           
-    		
-    		
+
     		 String SQL = "SELECT Id FROM dbo.Machines where Code='"+shebeihao+"'";    
              stmt = con.createStatement();    
              rs = stmt.executeQuery(SQL);   
-             //rs = stmt.executeQuery(SQL1);
-     
-             // Iterate through the data in the result set and display it.    
+  
              while (rs.next()) { 
              	
                  MachineID= rs.getString(1);
              }
              //按天
-            
-             
+
     		 String SQLz="SELECT OfflineDuration,FreeDuration,TotalDuration,DebugDuration,RunDuration,StopDuration FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay='"+riqi+"'";
              stmt = con.createStatement();    
              rs = stmt.executeQuery(SQLz); 
@@ -182,25 +174,18 @@ public class yongshi_tzny {
    		 cal.setTime(date);
    		 System.out.println("现在时间："+simdf.format(cal.getTime()));
    		
-   		 String[] week=new String [7];
+   		 String[] week=new String [3];
    		 cal.set(cal.DAY_OF_WEEK, cal.MONDAY);
    		week[0]= simdf.format(cal.getTime());
    		 
-   		 for(int i=1;i<7;i++) {
-   			int j=1;
-   		 cal.set(Calendar.DATE, cal.get(cal.DATE) + j);
-   		 week[i]= simdf.format(cal.getTime());
-   		 //System.out.println("当前时间所在周周日日期："+weeklast);
-   		 }
-   		 for(int i=0;i<7;i++) {
-   		System.out.println(week[i]);
-   		 }
-   		 int z=0;
-   		 for(int i=0;i<7;i++) {
-      		 String SQL1="SELECT OfflineDuration,FreeDuration,TotalDuration,DebugDuration,RunDuration,StopDuration FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay='"+week[i]+"'";
+   		
+   		 cal.set(Calendar.DATE, cal.get(cal.DATE) + 6);
+   		 week[1]= simdf.format(cal.getTime());
+
+      		 String SQL1="SELECT OfflineDuration,FreeDuration,TotalDuration,DebugDuration,RunDuration,StopDuration FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay between '"+week[0]+"' and '"+week[1]+"'";
              stmt = con.createStatement();    
              rs = stmt.executeQuery(SQL1); 
-            
+             int z=0;
              while (rs.next()) { 
              	 Offlinezhou[z]=rs.getInt(1);
              	 Freezhou[z]=rs.getInt(2);
@@ -210,7 +195,7 @@ public class yongshi_tzny {
              	 Stopzhou[z]=rs.getInt(6);
              	 z++;
              }
-   		 }
+   		 
    		 for(int i=0;i<8;i++) {
    			Offlinezhousum+=Offlinezhou[i];
    			Freezhousum+=Freezhou[i];
@@ -235,25 +220,20 @@ public class yongshi_tzny {
     	 //按月
     	  Calendar calM = Calendar.getInstance();
 	        calM.setTime(date);
-			calM.add(Calendar.MONTH, 1);
-	        calM.set(Calendar.DAY_OF_MONTH, 0);
-	        int lastday =Integer.parseInt(day.format(calM.getTime()));
-	        calM.set(calM.DAY_OF_MONTH, 1);
-			String[] month=new String[lastday];
-			month[0]= simdf.format(calM.getTime());
 			
-			 for(int i=1;i<lastday;i++) {
-				int j=1;
-			 calM.set(Calendar.DATE, calM.get(calM.DATE) + j);
-			 month[i]= simdf.format(calM.getTime());
-			 //System.out.println("当前时间所在周周日日期："+weeklast);
-			 }
-			 int m=0;
-			 for(int i=0;i<lastday;i++) {
-				 String SQL2="SELECT OfflineDuration,FreeDuration,TotalDuration,DebugDuration,RunDuration,StopDuration FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay='"+month[i]+"'";
+	        calM.set(calM.DAY_OF_MONTH, 1);
+			String[] month=new String[3];
+			month[0]= simdf.format(calM.getTime());
+			calM.set(Calendar.DAY_OF_MONTH, calM.getActualMaximum(Calendar.DAY_OF_MONTH));
+			month[1]=simdf.format(calM.getTime());
+			 System.out.println(month[0]);
+			 System.out.println(month[1]);
+			 
+			 
+				 String SQL2="SELECT OfflineDuration,FreeDuration,TotalDuration,DebugDuration,RunDuration,StopDuration FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay between '"+month[0]+"' and '"+month[1]+"'";
 	             stmt = con.createStatement();    
 	             rs = stmt.executeQuery(SQL2); 
-	            
+	             int m=0;
 	             while (rs.next()) { 
 	             	 Offlineyue[m]=rs.getInt(1);
 	             	 Freeyue[m]=rs.getInt(2);
@@ -263,8 +243,8 @@ public class yongshi_tzny {
 	             	 Stopyue[m]=rs.getInt(6);
 	             	 m++;
 	             }
-			 }
-			 for(int i=0;i<lastday;i++) {
+			 
+			 for(int i=0;i<100;i++) {
 		   			Offlineyuesum+=Offlineyue[i];
 		   			Freeyuesum+=Freeyue[i];
 		   			Totaltimeyuesum+=Totaltimeyue[i];
@@ -288,29 +268,22 @@ public class yongshi_tzny {
 		    	 //按年
 		    	  Calendar calY = Calendar.getInstance();
 		            calY.setTime(date);
-		            int year = calY.get(Calendar.YEAR);
-		            if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
-		            	year=366;
-		            	}else{
-		            	year=365;
-		            	}
+		           
 		            
 			        calY.set(calY.DAY_OF_YEAR, 1);
-					String[] YEAR=new String[year];
+					String[] YEAR=new String[3];
 					YEAR[0]= simdf.format(calY.getTime());
 					
-					 for(int i=1;i<year;i++) {
-						int j=1;
-					 calY.set(Calendar.DATE, calY.get(calY.DATE) + j);
-					 YEAR[i]= simdf.format(calY.getTime());
-					 //System.out.println("当前时间所在周周日日期："+weeklast);
-					 }
-					 int y=0;
-					 for(int i=0;i<year;i++) {
-						 String SQL3="SELECT OfflineDuration,FreeDuration,TotalDuration,DebugDuration,RunDuration,StopDuration FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay='"+YEAR[i]+"'";
+					calY.set(Calendar.DAY_OF_YEAR, calY.getActualMaximum(Calendar.DAY_OF_YEAR));
+					YEAR[1]= simdf.format(calY.getTime());
+					System.out.println(YEAR[0]);
+					System.out.println(YEAR[1]);
+					 
+					
+						 String SQL3="SELECT OfflineDuration,FreeDuration,TotalDuration,DebugDuration,RunDuration,StopDuration FROM dbo.DailyStatesSummaries where MachineId='"+MachineID+"' and ShiftDay between '"+YEAR[0]+"' and '"+YEAR[1]+"'";
 			             stmt = con.createStatement();    
 			             rs = stmt.executeQuery(SQL3); 
-			            
+			             int y=0;
 			             while (rs.next()) { 
 			             	 Offlinenian[y]=rs.getInt(1);
 			             	 Freenian[y]=rs.getInt(2);
@@ -320,15 +293,14 @@ public class yongshi_tzny {
 			             	 Stopnian[y]=rs.getInt(6);
 			             	 y++;
 			             }
-					 }
-					 for(int i=0;i<year;i++) {
+					 
+					 for(int i=0;i<1100;i++) {
 				   			Offlineniansum+=Offlinenian[i];
 				   			Freeniansum+=Freenian[i];
 				   			Totaltimeniansum+=Totaltimenian[i];
 				   			Debugniansum+=Debugnian[i];
 				   			RunTimeniansum+=RunTimenian[i];
 				   			Stopniansum+=Stopnian[i];
-				   			//System.out.println(Offlinenian[i]);
 				   		 }
 				   		RunTimeyear=df.format((float)RunTimeniansum/Totaltimeniansum*100)+"%";
 				        Freeyear=df.format((float)Freeniansum/Totaltimeniansum*100)+"%";

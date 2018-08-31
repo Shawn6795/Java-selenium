@@ -130,7 +130,7 @@ public class xiaolv_p {
 					Vector v4 = new Vector();
 					Vector v5 = new Vector();
 					
-					v.add("按班次");v.add(xiaolv_work.Brunrate);v.add(xiaolv_work.Bactivation);
+					v.add("按班次--"+xiaolv_work.Bbanciname+"");v.add(xiaolv_work.Brunrate);v.add(xiaolv_work.Bactivation);
 					v2.add("按天");v2.add(xiaolv_day.runrate);v2.add(xiaolv_day.activation);
 					v3.add("按周");v3.add(yunxinglv_zyn.runrateweek);v3.add(jiadonglv_zyn.activation);
 					v4.add("按月");v4.add(yunxinglv_zyn.runratemonth);v4.add(jiadonglv_zyn.activationmonth);
@@ -173,6 +173,7 @@ public class xiaolv_p {
 		frame.getContentPane().add(panel);
 		
 		table = new JTable();
+		table.setEnabled(false);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 			},

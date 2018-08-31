@@ -61,6 +61,7 @@ public class yongshi_p {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("\u7528\u65F6\u7EDF\u8BA1");
 		frame.setBounds(100, 100, 604, 352);
 		frame.dispose();
 		frame.getContentPane().setLayout(null);
@@ -116,7 +117,7 @@ public class yongshi_p {
 				Vector v3 = new Vector();
 				Vector v4 = new Vector();
 				Vector v5 = new Vector();
-				v.add("按班次");v.add(yongshi_work.Stopday);v.add(yongshi_work.RunTimeday);v.add(yongshi_work.Freeday);v.add(yongshi_work.Offlineday);v.add(yongshi_work.Debugday);
+				v.add("按班次--"+yongshi_work.banciming+"");v.add(yongshi_work.Stopday);v.add(yongshi_work.RunTimeday);v.add(yongshi_work.Freeday);v.add(yongshi_work.Offlineday);v.add(yongshi_work.Debugday);
 				v2.add("按天");v2.add(yongshi_tzny.Stopday);v2.add(yongshi_tzny.RunTimeday);v2.add(yongshi_tzny.Freeday);v2.add(yongshi_tzny.Offlineday);v2.add(yongshi_tzny.Debugday);
 				v3.add("按周");v3.add(yongshi_tzny.Stopweek);v3.add(yongshi_tzny.RunTimeweek);v3.add(yongshi_tzny.Freeweek);v3.add(yongshi_tzny.Offlineweek);v3.add(yongshi_tzny.Debugweek);
 				v4.add("按月");v4.add(yongshi_tzny.Stopmonth);v4.add(yongshi_tzny.RunTimemonth);v4.add(yongshi_tzny.Freemonth);v4.add(yongshi_tzny.Offlinemonth);v4.add(yongshi_tzny.Debugmonth);

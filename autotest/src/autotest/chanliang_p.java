@@ -125,7 +125,7 @@ public class chanliang_p {
 					Vector v3 = new Vector();
 					Vector v4 = new Vector();
 					Vector v5 = new Vector();
-					v.add("按班次");v.add(chanliang_algorithm.BYsum);
+					v.add("按班次--"+chanliang_algorithm.banciname+"");v.add(chanliang_algorithm.BYsum);
 					v2.add("按天");v2.add(chanliang_algorithm.Ysum);
 					v3.add("按周");v3.add(chanliang_zyn.Ysumweek);
 					v4.add("按月");v4.add(chanliang_zyn.Ysummonth);
@@ -161,6 +161,7 @@ public class chanliang_p {
 		frame.getContentPane().add(panel);
 		
 		table = new JTable();
+		table.setEnabled(false);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 			},

@@ -112,9 +112,7 @@ public class xiaolv_day {
                         stmt = con.createStatement();
                         rs = stmt.executeQuery(SQL4);
                         while (rs.next()) {
-                     	   strS2=rs.getString(1);
-                     	   
-                     	   
+                     	   strS2=rs.getString(1); 
                      	}
                         String SQL5="SELECT Top 1 EndTime,StartTime FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"' and IsPlaned='0'and ShiftDetail_ShiftDay='"+date+"' order by EndTime";
                         stmt = con.createStatement();
@@ -122,8 +120,7 @@ public class xiaolv_day {
                         while (rs.next()) {
                      	   strS3=rs.getString(1);
                      	  strS4=rs.getString(2);
-                     	}
-                   
+                     	}   
             }   
             
             for(int j=0;j<100;j++) {
@@ -138,15 +135,14 @@ public class xiaolv_day {
             System.out.println("总时间："+Total);
             System.out.println("运行时间："+Run);
             DecimalFormat df=new DecimalFormat("0.00");
-           // double Runrate = new BigDecimal((float)Run/Total).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();
+          
             System.out.println(JNei);
             System.out.println(JWai);
      		System.out.println("运行率："+df.format((float)Run/Total*100)); 
      		runrate=df.format((float)Run/Total*100);
-     		
      		System.out.println(strS2);
      		if(strS2==null&&strS3!=null&&strS4!=null) {
-
+     			
      			activation=df.format((float)(JNei+nowtime)/(JWai+JNei+nowtime)*100);
      		}else if(strS2!=null&&strS3==null&&strS4!=null) {
      	

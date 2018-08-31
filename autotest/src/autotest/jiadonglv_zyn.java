@@ -26,8 +26,8 @@ public class jiadonglv_zyn {
 	public static int JNeimonth=0;
 	public static int JWaimonth=0;
 	
-	public static int[] JNarryear=new int[100];
-	public static int[] JWarryear=new int[100];
+	public static int[] JNarryear=new int[1100];
+	public static int[] JWarryear=new int[1100];
 	public static int JNeiyear=0;
 	public static int JWaiyear=0;
 	
@@ -65,19 +65,18 @@ public class jiadonglv_zyn {
    		 cal.setTime(date);
    		 String nowdate=simdf.format(cal.getTime());
  
-   		 String[] week=new String [7];
+   		 String[] week=new String [3];
    		 cal.set(cal.DAY_OF_WEEK, cal.MONDAY);
    		week[0]= simdf.format(cal.getTime());
    		 
-   		 for(int i=1;i<7;i++) {
-   			int j=1;
-   		 cal.set(Calendar.DATE, cal.get(cal.DATE) + j);
-   		 week[i]= simdf.format(cal.getTime());
+   		
+   		 cal.set(Calendar.DATE, cal.get(cal.DATE) + 6);
+   		 week[1]= simdf.format(cal.getTime());
    		 //System.out.println("当前时间所在周周日日期："+weeklast);
-   		 }
-   		 for(int i=0;i<7;i++) {
-   		System.out.println(week[i]);
-   		 }
+   		 
+   		System.out.println(week[0]);
+   		System.out.println(week[1]);
+   		 
             String SQL = "SELECT Id FROM dbo.Machines where Code='"+yunxinglv_zyn.result+"'";    
             stmt = con.createStatement();    
             rs = stmt.executeQuery(SQL);   
@@ -106,28 +105,28 @@ public class jiadonglv_zyn {
             	System.out.println(now);
             	
                //System.out.println(MachineID);  
-            	int z1=0;
-              for(int i=0;i<7;i++) {
-                   String SQL2="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='1'and ShiftDetail_ShiftDay='"+week[i]+"'";
+            	
+              
+                   String SQL2="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='1'and ShiftDetail_ShiftDay between '"+week[0]+"' and '"+week[1]+"'";
                    stmt = con.createStatement();
                    rs = stmt.executeQuery(SQL2);
-                   
+                   int z1=0;
                    while (rs.next()) {
                 	   JNarr[z1]=rs.getInt(1);
                 	   z1++;
                    }
-              }
-              int z2=0;
-              for(int i=0;i<7;i++) {
-                	   String SQL3="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='0'and ShiftDetail_ShiftDay='"+week[i]+"'";
+              
+              
+             
+                	   String SQL3="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='0'and ShiftDetail_ShiftDay between '"+week[0]+"' and '"+week[1]+"'";
                        stmt = con.createStatement();
                        rs = stmt.executeQuery(SQL3);
-                       
+                       int z2=0;
                        while (rs.next()) {
                        JWarr[z2]=rs.getInt(1);
                        z2++;
                        }
-              }
+              
 
                        
                        String SQL4="SELECT Top 1 EndTime,StartTime FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"' and IsPlaned='1'and ShiftDetail_ShiftDay='"+nowdate+"' order by EndTime";
@@ -161,48 +160,42 @@ public class jiadonglv_zyn {
        		 cal.setTime(date);
        		
      
-       		calM.add(Calendar.MONTH, 1);
-	        calM.set(Calendar.DAY_OF_MONTH, 0);
-	        int lastday =Integer.parseInt(day.format(calM.getTime()));
+       		
+	       
 	        calM.set(calM.DAY_OF_MONTH, 1);
-			String[] month=new String[lastday];
+			String[] month=new String[3];
 			month[0]= simdf.format(calM.getTime());
-			
-			 for(int i=1;i<lastday;i++) {
-				int j=1;
-			 calM.set(Calendar.DATE, calM.get(calM.DATE) + j);
-			 month[i]= simdf.format(calM.getTime());
-			 //System.out.println("当前时间所在周周日日期："+weeklast);
-			 }
+			calM.set(Calendar.DAY_OF_MONTH, calM.getActualMaximum(Calendar.DAY_OF_MONTH));
+			month[1]=simdf.format(calM.getTime());
+			 System.out.println(month[0]);
+			 System.out.println(month[1]);
+			 
        		 
        		
-       		 for(int i=0;i<lastday;i++) {
-       		System.out.println(month[i]);
-       		 }
 
                    //System.out.println(MachineID);  
-                	int y1=0;
-                  for(int i=0;i<lastday;i++) {
-                       String SQL2="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='1'and ShiftDetail_ShiftDay='"+month[i]+"'";
+                	
+               
+                       String SQL2="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='1'and ShiftDetail_ShiftDay between '"+month[0]+"' and '"+month[1]+"'";
                        stmt = con.createStatement();
                        rs = stmt.executeQuery(SQL2);
-                       
+                       int y1=0;
                        while (rs.next()) {
                     	   JNarrmonth[y1]=rs.getInt(1);
                     	   y1++;
                        }
-                  }
-                  int y2=0;
-                  for(int i=0;i<lastday;i++) {
-                    	   String SQL3="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='0'and ShiftDetail_ShiftDay='"+month[i]+"'";
+                  
+                 
+                 
+                    	   String SQL3="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='0'and ShiftDetail_ShiftDay between '"+month[0]+"' and '"+month[1]+"'";
                            stmt = con.createStatement();
                            rs = stmt.executeQuery(SQL3);
-                           
+                           int y2=0;
                            while (rs.next()) {
                            JWarrmonth[y2]=rs.getInt(1);
                            y2++;
                            }
-                  }
+                  
 
                 for(int j=0;j<100;j++) {
                      JNeimonth+=JNarrmonth[j];
@@ -212,51 +205,41 @@ public class jiadonglv_zyn {
        //按年
          		 Calendar calY = Calendar.getInstance();
                  calY.setTime(date);
-                 int year = calY.get(Calendar.YEAR);
-                 if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
-                 	year=366;
-                 	}else{
-                 	year=365;
-                 	}
-                 
+
      	        calY.set(calY.DAY_OF_YEAR, 1);
-     			String[] YEAR=new String[year];
+     			String[] YEAR=new String[3];
      			YEAR[0]= simdf.format(calY.getTime());
-     			
-     			 for(int i=1;i<year;i++) {
-     				int j=1;
-     			 calY.set(Calendar.DATE, calY.get(calY.DATE) + j);
-     			 YEAR[i]= simdf.format(calY.getTime());
-     			 //System.out.println("当前时间所在周周日日期："+weeklast);
-     			 }
-     			 for(int i=0;i<year;i++) {
-     	       		System.out.println(YEAR[i]);
-     	       		 }
+     			calY.set(Calendar.DAY_OF_YEAR, calY.getActualMaximum(Calendar.DAY_OF_YEAR));
+    			YEAR[1]= simdf.format(calY.getTime());
+    			System.out.println(YEAR[0]);
+    			System.out.println(YEAR[1]);
+     			 
+     			 
      	               
-     	                	int n1=0;
-     	                  for(int i=0;i<year;i++) {
-     	                       String SQL3="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='1'and ShiftDetail_ShiftDay='"+YEAR[i]+"'";
+     	                	
+     	                  
+     	                       String SQL4="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='1'and ShiftDetail_ShiftDay between '"+YEAR[0]+"' and '"+YEAR[1]+"'";
      	                       stmt = con.createStatement();
-     	                       rs = stmt.executeQuery(SQL3);
-     	                       
+     	                       rs = stmt.executeQuery(SQL4);
+     	                      int n1=0;
      	                       while (rs.next()) {
      	                    	   JNarryear[n1]=rs.getInt(1);
      	                    	   n1++;
      	                       }
-     	                  }
-     	                  int n2=0;
-     	                  for(int i=0;i<year;i++) {
-     	                    	   String SQL4="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='0'and ShiftDetail_ShiftDay='"+YEAR[i]+"'";
+     	                  
+     	                  
+     	                 
+     	                    	   String SQL5="SELECT Duration FROM dbo.States,dbo.StateInfos where dbo.States.Code=dbo.StateInfos.Code and MachineId='"+MachineID+"'and IsPlaned='0'and ShiftDetail_ShiftDay between '"+YEAR[0]+"' and '"+YEAR[1]+"'";
      	                           stmt = con.createStatement();
-     	                           rs = stmt.executeQuery(SQL4);
-     	                           
+     	                           rs = stmt.executeQuery(SQL5);
+     	                          int n2=0;
      	                           while (rs.next()) {
      	                           JWarryear[n2]=rs.getInt(1);
      	                           n2++;
      	                           }
-     	                  }
+     	                  
 
-     	                for(int j=0;j<100;j++) {
+     	                for(int j=0;j<1100;j++) {
      	                	
      	                	 
      	                	 JNeiyear+=JNarryear[j];
