@@ -18,7 +18,7 @@ public class zhibiao {
 	    	System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("print.txt")),true));
 	    	
 	    	File fileR = new File("random.txt");
-	    	//File fileM = new File("shebei.txt");
+
 	    	try {
 
  			FileInputStream in = new FileInputStream(fileR); // 读取文件路径
@@ -27,9 +27,7 @@ public class zhibiao {
  			 String readrandom=new String(bs);
  			 int rr=Integer.parseInt(readrandom)-1;
  			 String next=String.valueOf(rr);
- 			//String R_random=readrandom;
- 			
- 			//System.out.println(next);
+
 	        System.setProperty("webdriver.chrome.driver","chromedriver.exe");//chromedriver服务地址
 	        WebDriver driver =new ChromeDriver(); //新建一个WebDriver 的对象
 

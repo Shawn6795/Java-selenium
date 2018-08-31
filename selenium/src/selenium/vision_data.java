@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -268,6 +269,11 @@ public class vision_data {
        }else {
     	   System.out.println("当前班次不同");
        }
+       String Vjiadonglv =driver.findElement(By.className("item")).getText();
+      
+       System.out.println();
+       System.out.println(Vjiadonglv);
+       
        try {
    		Process process = Runtime.getRuntime().exec(
    		"cmd.exe /c notepad vision.txt");
